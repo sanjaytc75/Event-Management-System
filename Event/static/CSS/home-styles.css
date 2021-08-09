@@ -1,0 +1,37 @@
+body{
+   min-height: 50rem;
+   
+}
+ul li{
+   position: relative;
+   left:150%;
+   padding-left: 10px;
+   padding-right: 10px;
+}
+nav{
+   margin: 0px;
+   padding: 0px;
+
+}
+img{
+   max-width:430% ;
+   padding-left: 530px;
+   margin-top: -280px;
+   
+
+}
+
+h1{
+  float: left;
+  font-family: 'Fredoka One', cursive;
+  font-size: 50px;
+  margin-top: -50px;
+    
+}
+p{
+  float: left;
+  font-size:large;
+  font-family: 'Fredoka One', cursive;
+  text-align: left;
+
+}

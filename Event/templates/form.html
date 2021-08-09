@@ -1,0 +1,186 @@
+{% extends "layout.html" %}
+<head>
+  <style>
+    .container {
+    max-width: 960px;
+    padding-left: 200px;
+    padding-top: 110px;
+    }
+  
+    .lh-condensed { line-height: 1.25; }
+    </style>
+</head>
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 order-md-1 ">
+                
+        <form class="form-Booking" method="POST" action="">
+          {{ form.hidden_tag() }}
+          <h4 class="mb-3">Event Details</h4>
+
+          <div class="form-group">
+            {{ form.name.label(class="sr-only") }}
+            <label for="comment">Name:</label>
+            {% if form.name.errors %}
+                {{ form.name(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                {% for error in form.name.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+                </div>
+             {% else %}
+                {{ form.name(class="form-control", placeholder="Name")}}
+             {% endif %}
+             
+        </div>
+
+        <div class="form-group">
+            {{ form.email.label(class="sr-only") }}
+            <label for="comment">E-Mail:</label>
+            {% if form.email.errors %}
+                {{ form.email(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                {% for error in form.email.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+                </div>
+             {% else %}
+                {{ form.email(class="form-control",placeholder="Email")}}
+             {% endif %}
+        </div>
+        
+          <div class="form-group">
+            <label for="event_name">Event Name</label>
+            {{ form.event_name.label(class="sr-only") }}
+            {% if form.event_name.errors %}
+                {{ form.event_name(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                {% for error in form.event_name.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+                </div>
+             {% else %}
+                {{ form.event_name(class="form-control", placeholder="Event Name")}}
+             {% endif %}
+          </div>
+
+          <div class="form-group">
+            <label for="city">City</label>
+            {{ form.city.label(class="sr-only") }}
+            {% if form.city.errors %}
+                {{ form.city(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                {% for error in form.city.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+                </div>
+             {% else %}
+                {{ form.city(class="form-control", placeholder="city")}}
+             {% endif %}
+          </div>
+
+          <div class="form-group">
+            <label for="venue">Venue(Optional)</label>
+            {{ form.venue.label(class="sr-only") }}
+            {% if form.venue.errors %}
+                {{ form.venue(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                {% for error in form.venue %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+                </div>
+             {% else %}
+                {{ form.venue(class="form-control", placeholder="Venue")}}
+             {% endif %}
+          </div>
+
+          <div class="form-group">
+            <label for="event_name">Date</label>
+            {{ form.date.label(class="sr-only") }}
+            {% if form.date.errors %}
+                {{ form.date(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                {% for error in form.date.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+                </div>
+             {% else %}
+                {{ form.date(class="form-control", placeholder="Event Name")}}
+             {% endif %}
+          </div>
+
+          <div class="form-group">
+            <label for="event_name">Phone Number(add country code)</label>
+            {{ form.phone.label(class="sr-only") }}
+            {% if form.phone.errors %}
+                {{ form.phone(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                {% for error in form.date.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+                </div>
+             {% else %}
+                {{ form.phone(class="form-control", placeholder="Phone Number")}}
+             {% endif %}
+          </div>
+
+
+          <div class="form-group">
+            <label for="event_name">Attendees</label>
+            {{ form.attendees.label(class="sr-only") }}
+            {% if form.attendees.errors %}
+                {{ form.attendees(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                {% for error in form.attendees.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+                </div>
+             {% else %}
+                {{ form.attendees(class="form-control",type="number",id="example-number-input",placeholder="Attendees")}}
+             {% endif %}
+          </div>
+
+
+          <div class="form-group">
+            <label for="event_name">Time</label>
+            {{ form.time.label(class="sr-only") }}
+            {% if form.time.errors %}
+                {{ form.attendees(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                {% for error in form.time.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+                </div>
+             {% else %}
+                {{ form.time(class="form-control",type="time",id="ime-input")}}
+             {% endif %}
+          </div>          
+
+
+
+
+
+          <div class="form-group">
+            {{ form.additional_requirements.label(class="sr-only") }}
+            <label for="comment">Additional Requirements(Mention if catering service is required)</label>
+            {% if form.additional_requirements.errors %}
+                {{ form.feedback(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                {% for error in form.additional_requirements.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+                </div>
+            {% else %}
+                {{ form.additional_requirements(class="form-control",id="Textarea1",rows="5",placeholder="Feedback")}}
+            {% endif %}
+          </div>
+      
+
+          <hr class="mb-4">
+          <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
